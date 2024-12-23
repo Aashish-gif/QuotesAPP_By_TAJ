@@ -1,7 +1,5 @@
-// FileName: App.js
-
 import React, { useState, useEffect } from "react";
-import { getRandom, getAll } from "@divyanshu013/inspirational-quotes";
+import { getAll } from "@divyanshu013/inspirational-quotes";
 import "./App.css";
 
 export default function App() {
@@ -9,7 +7,6 @@ export default function App() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        // Fetch all quotes and set them in the state
         const quotesData = getAll();
         setQuotes(quotesData);
     }, []);
@@ -26,29 +23,30 @@ export default function App() {
 
     const currentQuote = quotes.length > 0 ? quotes[currentIndex] : null;
 
-    const backgroundColors = ["#8cc084", "#b7ebc3", "#ffb37e", "#7fa8d7"];
-
-    const currentBackgroundColor =
-        backgroundColors[currentIndex % backgroundColors.length];
-
     return (
-        <div className="content" style={{ background: currentBackgroundColor }}>
-           
-            <h1>Inspirational Quote Generator</h1>
-            {currentQuote && (
-                <blockquote>
-                    <p>"{currentQuote.quote}"</p>
-                </blockquote>
-            )}
-            {currentQuote && <h2>{currentQuote.author}</h2>}
-            {currentQuote && <h3>{currentQuote.source}</h3>}
+        <div className="content">
+            <div className="quote-container">
+                <h1>Inspirational Quote Generator</h1>
+                {currentQuote && (
+                    <blockquote className="quote">
+                        <p>"{currentQuote.quote}"</p>
+                    </blockquote>
+                )}
+                {currentQuote && <h2 className="author">{currentQuote.author}</h2>}
+                {currentQuote && <h3 className="source">{currentQuote.source}</h3>}
+            </div>
             <div className="button-container">
-                <button onClick={handlePreviousClick}>Previous</button>
-                <button onClick={handleNextClick}>Next</button>
+                <button className="prev" onClick={handlePreviousClick}>
+                    Previous
+                </button>
+                <button className="next" onClick={handleNextClick}>
+                    Next
+                </button>
                 <button
+                    className="share"
                     onClick={() =>
                         window.open(
-`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`
+                            `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`
                         )
                     }
                 >
@@ -58,3 +56,4 @@ export default function App() {
         </div>
     );
 }
+
