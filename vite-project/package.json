@@ -1,13 +1,13 @@
 {
-  "name": "vite-project",
+  "name": "quotes-app",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "react-scripts start"
   },
   "dependencies": {
     "@divyanshu013/inspirational-quotes": "^1.0.7",
@@ -28,35 +28,3 @@
     "vite": "^6.0.3"
   }
 }
-{
-  "name": "my-project",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "react-scripts start",  // This should be defined
-    "build": "react-scripts build",
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  }
-}
-{
-  "name": "quotes-app",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "dev": "react-scripts start",   // This is the "dev" script you're missing
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-scripts": "^5.0.0",
-    "react-router-dom": "^6.0.0"
-  },
-  "devDependencies": {}
-}
-
