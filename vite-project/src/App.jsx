@@ -42,18 +42,10 @@ export default function App() {
                 <button className="next" onClick={handleNextClick}>
                     Next
                 </button>
-                <button
-                    className="share"
-                    onClick={() =>
-                        window.open(
-                            `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`
-                        )
-                    }
-                >
-                    Share on Facebook
-                </button>
             </div>
         </div>
     );
+}
+
 }
 
